@@ -26,12 +26,13 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
   - [Built With](#built-with)
 - [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
+- [How To Use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 <!-- OVERVIEW -->
 
@@ -90,4 +91,3 @@ $ npm start
 - Website [your-website.com](https://{your-web-site-link})
 - GitHub [@your-username](https://{github.com/your-usermame})
 - Twitter [@your-twitter](https://{twitter.com/your-username})
-# portfolio-master
