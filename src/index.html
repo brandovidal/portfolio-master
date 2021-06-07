@@ -17,46 +17,114 @@
     <title>Portfolio Master</title>
   </head>
   <body>
-    <main class="container">
-      <section class="card resumen">
-        <article class="image">
-          <picture><img src="assets/img/wilson.jpg" alt="" /></picture>
-        </article>
-        <article class="body">
-          <div class="header row">
-            <div class="col">
-              <h1 class="title">Billy Pearson</h1>
-              <h3 class="subtitle">Front-end developer</h3>
-            </div>
+    <section class="container">
+      <main>
+        <section class="card resumen">
+          <article class="image">
+            <picture><img src="assets/img/wilson.jpg" alt="" /></picture>
+          </article>
+          <article class="body">
+            <div class="header row-2">
+              <div class="col">
+                <h1 class="title font-weight-bold">Billy Pearson</h1>
+                <h3 class="text">Front-end developer</h3>
+              </div>
 
-            <div class="col">
-              <a id="email" class="link" href="#">
-                <picture class="icon"
-                  ><img src="assets/svg/email.svg" alt=""
-                /></picture>
-                <label for="email">billy@example.com</label>
-              </a>
-              <a id="phone" class="link" href="#">
-                <picture class="icon"
-                  ><img src="assets/svg/phone.svg" alt=""
-                /></picture>
-                <label for="phone">(+603) 546 624 342</label>
-              </a>
+              <div class="col">
+                <a id="email" class="link" href="#">
+                  <picture class="icon"
+                    ><img src="assets/svg/email.svg" alt=""
+                  /></picture>
+                  <label for="email">billy@example.com</label>
+                </a>
+                <a id="phone" class="link" href="#">
+                  <picture class="icon"
+                    ><img src="assets/svg/phone.svg" alt=""
+                  /></picture>
+                  <label for="phone">(+603) 546 624 342</label>
+                </a>
+              </div>
             </div>
+            <p class="text">
+              Self-motivated developer, who is willing to learn and create
+              outstanding UI applications.
+            </p>
+            <p class="text">
+              Donec aliquam est dui, vel vestibulum diam sollicitudin id.
+              Quisque feugiat malesuada molestie.
+            </p>
+          </article>
+        </section>
+        <section class="card skill">
+          <h2 class="title">Front end</h2>
+          <article class="row">
+            <div class="col">
+              <label>React</label>
+              <div class="progress">
+                <div class="progress-done" data-done="70"></div>
+              </div>
+            </div>
+            <div class="col">
+              <label>Javascript</label>
+              <div class="progress">
+                <div class="progress-done" data-done="80"></div>
+              </div>
+            </div>
+            <div class="col">
+              <label>CSS</label>
+              <div class="progress">
+                <div class="progress-done" data-done="85"></div>
+              </div>
+            </div>
+            <div class="col">
+              <label>Vue</label>
+              <div class="progress">
+                <div class="progress-done" data-done="50"></div>
+              </div>
+            </div>
+            <div class="col">
+              <label>Redux</label>
+              <div class="progress">
+                <div class="progress-done" data-done="65"></div>
+              </div>
+            </div>
+            <div class="col">
+              <label>React Native</label>
+              <div class="progress">
+                <div class="progress-done" data-done="50"></div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="card blog">
+          <article class="header">
+            <div class="info">
+              <h6 class="subtitle text-muted">Blog</h6>
+              <h2 class="title">How to organize your CSS</h2>
+            </div>
+            <div class="image">
+              <picture><img src="assets/img/wilson.jpg" alt="" /></picture>
+            </div>
+          </article>
+          <div class="content">
+            <p class="subtitle">
+              In this article I tell the story about Proin eu justo sit amet
+              lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.
+            </p>
+            <p class="subtitle">
+              Donec aliquam est dui, vel vestibulum diam sollicitudin id.
+              Quisque feugiat malesuada molestie.
+            </p>
           </div>
-          <p class="text">
-            Self-motivated developer, who is willing to learn and create
-            outstanding UI applications.
-          </p>
-          <p class="text">
-            Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque
-            feugiat malesuada molestie.
-          </p>
-        </article>
-      </section>
-    </main>
+          <div class="end">
+            <p class="text-primary">dev.to</p>
+          </div>
+        </section>
+      </main>
+    </section>
     <footer>
       created by <span class="username">Brando Vidal</span> - devChallenges.io
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
