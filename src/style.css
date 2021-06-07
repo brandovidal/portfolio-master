@@ -150,7 +150,7 @@ button.btn-outline-primary {
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 312px 305px 305px 305px;
+  grid-template-rows: 1fr 305px 305px 305px;
   row-gap: 35px;
   column-gap: 35px;
 }
@@ -173,6 +173,9 @@ main .resumen {
 }
 main .resumen .header {
   justify-content: space-between;
+}
+main .resumen .header .col:nth-child(1) {
+  min-width: 200px;
 }
 main .resumen .header .link {
   width: 100%;
@@ -249,7 +252,7 @@ main .skill .col label {
 .row-2 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 /**** Cards ****/
@@ -279,17 +282,20 @@ main .skill .col label {
   width: 100%;
 }
 .card .title {
+  width: 100%;
   font-size: 24px;
   line-height: 29px;
   color: var(--color-secondary);
 }
 .card .subtitle {
+  width: 100%;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: var(--color-default);
 }
 .card .text {
+  width: 100%;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -374,7 +380,7 @@ footer .username {
   main {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows:  1fr ;
+    grid-template-rows: 1fr;
     row-gap: 35px;
     column-gap: 35px;
   }
@@ -398,7 +404,7 @@ footer .username {
 }
 
 @media (max-width: 425px) {
-    .progress {
-      width: 100px;
-    }
+  .progress {
+    width: 100px;
+  }
 }
