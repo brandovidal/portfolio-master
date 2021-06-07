@@ -22,6 +22,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-default);
+  font-style: normal;
+  font-weight: 500;
   color: var(--color-default);
   background-color: var(--bg-default);
 }
@@ -101,15 +103,21 @@ button.btn-outline-primary {
 .hidden {
   display: none;
 }
+.link {
+  display: flex;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--color-secondary);
+}
 
 /**** Font Weight Styles ****/
-.font-default {
+.font-weight-default {
   font-weight: 500;
 }
-.font-semibold {
+.font-weight-semibold {
   font-weight: 600;
 }
-.font-bold {
+.font-weight-bold {
   font-weight: 700;
 }
 
@@ -133,8 +141,41 @@ button.btn-outline-primary {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 5vh 5vw; */
-  padding: 70px 197px;
+  padding: 5vh 5vw;
+  /* padding: 70px 197px; */
+}
+
+/**** Resumen ****/
+main .resumen {
+  display: flex;
+}
+main .resumen .image {
+  max-width: 270px;
+}
+main .resumen .icon img {
+  width: 21px;
+  height: 21px;
+  border-radius: 0;
+  margin-right: 18px;
+}
+main .resumen .title {
+  margin-bottom: 5px;
+}
+main .resumen .subtitle {
+  margin-bottom: 35px;
+}
+main .resumen .text {
+  margin-bottom: 15px;
+}
+
+/**** Cards ****/
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.row .col {
+  display: flex;
+  flex-direction: column;
 }
 
 /**** Cards ****/
@@ -152,6 +193,9 @@ button.btn-outline-primary {
   cursor: pointer;
   box-shadow: 10px 10px 30px rgba(51, 51, 51, 0.1);
 }
+.card .body {
+  padding: 0 32px;
+}
 .card picture {
   max-width: 380px;
 }
@@ -160,18 +204,20 @@ button.btn-outline-primary {
   width: 100%;
 }
 .card .title {
-  font-style: normal;
-  font-weight: 500;
   font-size: 24px;
   line-height: 29px;
   color: var(--color-secondary);
-  /* margin-bottom: 30px; */
 }
-.card .content {
-  font-style: normal;
+.card .subtitle {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  color: var(--color-default);
+}
+.card .text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 /**** Footer ****/
@@ -182,7 +228,7 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 5px;
-  font-style: normal;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -195,4 +241,39 @@ footer .username {
   font-weight: 700;
   padding: 0 5px;
   text-decoration: underline;
+}
+
+/**** Container && Resumen ****/
+@media (max-width: 768px) {
+  .container {
+    padding: 2.5vh 4.5vw;
+  }
+  main .resumen {
+    flex-direction: column;
+  }
+  main .resumen .image {
+    margin: 0 auto;
+    max-width: 370px;
+  }
+  main .resumen .body {
+    padding: 22px 0 10px 0;
+  }
+  main .resumen .row {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 35px;
+  }
+  main .resumen .header {
+    margin-bottom: 35px;
+  }
+  main .resumen .subtitle {
+    margin-bottom: 0;
+  }
+}
+
+/**** Row ****/
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+  }
 }
