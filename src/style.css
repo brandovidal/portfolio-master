@@ -13,6 +13,12 @@
   --bg-white: #ffffff;
   --bg-dark: #100e1d;
 
+  --border-radius-zero: 0;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+
   --font-default: "Montserrat", sans-serif;
   --font-primary: "Roboto", sans-serif;
 }
@@ -52,12 +58,12 @@ li {
 }
 img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
 }
 input[type="checkbox"] {
   border: 1px solid var(--color-muted);
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
 }
 small {
   font-size: 12px;
@@ -69,7 +75,7 @@ small {
 /**** Buttons Styles ****/
 button {
   border: none;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   padding: 12px 35px;
   transition: all ease-in 300ms;
 }
@@ -144,7 +150,7 @@ button.btn-outline-primary {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5vh 5vw;
+  padding: 5vh 10vw;
   /* padding: 70px 197px; */
 }
 main {
@@ -165,6 +171,10 @@ main section:nth-child(2) {
 main section:nth-child(3) {
   grid-column: 2/3;
   grid-row: 2/4;
+}
+main section:nth-child(4) {
+  grid-column: 1/2;
+  grid-row: 3/6;
 }
 
 /**** Resumen ****/
@@ -191,7 +201,7 @@ main .resumen .image {
 main .resumen .icon img {
   width: 21px;
   height: 21px;
-  border-radius: 0;
+  border-radius: var(--border-radius-zero);
   margin-right: 18px;
 }
 main .resumen .title {
@@ -201,22 +211,6 @@ main .resumen .subtitle {
   margin-bottom: 35px;
 }
 main .resumen .text {
-  margin-bottom: 15px;
-}
-
-/**** Blog ****/
-main .blog .header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-main .blog .header .info {
-  max-width: 178px;
-}
-main .blog .image {
-  max-width: 270px;
-}
-main .blog .subtitle {
   margin-bottom: 15px;
 }
 
@@ -235,6 +229,46 @@ main .skill .col label {
   width: 120px;
   margin-right: 20px;
 }
+
+/**** Blog ****/
+main .blog {
+  padding-right: 0;
+}
+main .blog .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+main .blog .header .info {
+  max-width: 178px;
+}
+main .blog .content {
+  padding-right: 22px;
+}
+main .blog .image {
+  max-width: 270px;
+}
+main .blog .image img {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+main .blog .subtitle {
+  margin-bottom: 15px;
+}
+main .blog .end {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+/**** Hobbies *****/
+main .hobbies .item {
+  padding-bottom: 35px;
+}
+main .hobbies .item .info {
+  padding-top: 15px;
+}
+
 
 /**** Row - Col ****/
 .row {
@@ -261,7 +295,7 @@ main .skill .col label {
   padding: 22px;
   /* margin-bottom: 42px; */
   border: none;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   background: #ffffff;
   box-shadow: 5px 5px 15px rgba(51, 51, 51, 0.1);
   transition: all ease-in 300ms;
@@ -305,7 +339,7 @@ main .skill .col label {
 /**** Progress Bar ****/
 .progress {
   background-color: var(--color-gray);
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   width: 235px;
   height: 9.5px;
 }
@@ -313,7 +347,7 @@ main .skill .col label {
   background: var(--color-primary);
   box-shadow: 0 2px 2px -4px var(--color-primary),
     0 2px 4px var(--color-primary);
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   height: 100%;
   width: 0;
   opacity: 0;
