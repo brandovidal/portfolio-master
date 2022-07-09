@@ -69,6 +69,7 @@ button {
   border-radius: var(--border-radius-lg);
   padding: 12px 35px;
   transition: all ease-in 300ms;
+  background-color: var(--colorbg-white);
 }
 button:hover {
   cursor: pointer;
@@ -138,10 +139,6 @@ button.btn-outline-primary {
 /**** Custom Styles ****/
 /**** Container ****/
 .container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   display: grid;
   place-content: center;
   padding: 5vh 10vw;
@@ -150,36 +147,47 @@ button.btn-outline-primary {
 main {
   display: grid;
   grid-template-columns: 0.65fr 1fr;
-  /* grid-template-columns: repeat(2, 1fr); */
   grid-template-rows: 1fr 303px 351px 482px 115px 568px;
-  row-gap: 35px;
-  column-gap: 35px;
+  gap: 35px;
   max-width: 1046px;
 }
 /**** Resumen ****/
-main section:nth-child(1) {
+main > section:nth-child(1) {
   grid-column: 1/3;
   grid-row: 1/2;
 }
 /**** Skill ****/
-main section:nth-child(2) {
+main > section:nth-child(2) {
   grid-column: 1/2;
   grid-row: 2/3;
 }
 /**** Blog ****/
-main section:nth-child(3) {
+main > section:nth-child(3) {
   grid-column: 2/3;
   grid-row: 2/4;
 }
 /**** Hobbies *****/
-main section:nth-child(4) {
+main > section:nth-child(4) {
   grid-column: 1/2;
   grid-row: 3/5;
 }
 /**** Experiences *****/
-main section:nth-child(5) {
+main > section:nth-child(5) {
   grid-column: 2/3;
   grid-row: 4/5;
+}
+/**** Projects *****/
+main > section:nth-child(6) {
+  grid-column: 1/3;
+  grid-row: 5/6;
+}
+main > section:nth-child(7) {
+  grid-column: 1/3;
+  grid-row: 6/7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 303px 351px 482px 115px 568px;
+  gap: 30.5px;
 }
 
 /**** Resumen ****/
@@ -193,12 +201,18 @@ main .resumen .header {
 main .resumen .header .col:nth-child(1) {
   min-width: 200px;
 }
-main .resumen .header .link {
+main .resumen .header .col .link {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+main .resumen .header .col a:hover,
+main .resumen .header .col a:hover label {
+  cursor: pointer !important;
 }
 main .resumen .header .link label {
+  font-size: 0.9rem;
   width: 190px;
   line-height: 29px;
 }
@@ -290,9 +304,11 @@ main .hobbies .list .item:last-child {
 }
 main .hobbies .list .item picture {
   height: 139px;
+  /* max-width: 400px; */
 }
 main .hobbies .list .item img {
   height: inherit;
+  /* width: inherit; */
 }
 main .hobbies .list .item .info {
   padding: 15px;
@@ -340,6 +356,59 @@ main .experiences .list .info > .small {
   line-height: 19px;
 }
 
+/**** Projects *****/
+main .projects > .title {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 20px;
+}
+main .projects .content {
+  display: flex;
+}
+main .projects .content button {
+  margin-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 17px;
+  padding: 8px 22px;
+}
+
+/**** List of Projects *****/
+main .list-projects .card {
+  padding: 18px;
+}
+main .list-projects .header picture {
+  height: 217px;
+  max-width: 292px;
+}
+main .list-projects .header img {
+  width: inherit;
+  height: inherit;
+  background-size: cover;
+}
+main .list-projects .card .keywords {
+  display: flex;
+}
+main .list-projects .card .keywords li {
+  font-size: 1rem;
+  line-height: 19.5px;
+  color: var(--color-secondary);
+  margin: 22px 9px 22px 0;
+}
+main .list-projects .card .info .title {
+  font-size: 1.5rem;
+  line-height: 29.25px;
+  color: var(--color-dark);
+  margin-bottom: 1.125rem;
+}
+main .list-projects .card .info .text {
+  font-size: 1rem;
+  line-height: 19.5px;
+  margin-bottom: 1.125rem;
+}
+main .list-projects .card .info button {
+  margin-right: 0.5rem;
+}
+
 /**** Row - Col ****/
 .row {
   display: grid;
@@ -356,7 +425,6 @@ main .experiences .list .info > .small {
 .row-2 .col {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 /**** Cards ****/
@@ -371,7 +439,7 @@ main .experiences .list .info > .small {
   transition: all ease-in 300ms;
 }
 .card:hover {
-  /* cursor: pointer; */
+  cursor: auto;
   box-shadow: 10px 10px 30px rgba(51, 51, 51, 0.2), -10px -10px 30px rgba(51, 51, 51, 0.2);
 }
 .card .body {
@@ -464,7 +532,7 @@ footer .username {
   main .resumen .header .link {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start !important;
   }
   main .resumen .image {
     margin: 0 auto;
@@ -483,16 +551,19 @@ footer .username {
   main .resumen .subtitle {
     margin-bottom: 0;
   }
+  main .list-projects .header picture {
+    height: auto;
+    max-width: auto;
+  }
 }
 
 /**** Row ****/
 @media (max-width: 1024px) {
   main {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    row-gap: 35px;
-    column-gap: 35px;
+    gap: 35px;
   }
   main section:nth-child(1) {
     grid-column: 1/2;
@@ -514,6 +585,18 @@ footer .username {
     grid-column: 1/2;
     grid-row: 5/6;
   }
+  main section:nth-child(6) {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  main > section:nth-child(7) {
+    grid-column: 1/2;
+    grid-row: 7/8;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    gap: 30.5px;
+  }
   .row,
   .row-2 {
     grid-template-columns: repeat(1, 1fr);
@@ -522,6 +605,13 @@ footer .username {
 }
 
 @media (max-width: 425px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 35px;
+    /* width: 200px; */
+  }
   .progress {
     width: 100px;
   }
