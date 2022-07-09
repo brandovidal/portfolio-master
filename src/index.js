@@ -1,14 +1,17 @@
-(function () {
-  document.addEventListener("DOMContentLoaded", () => getProgressBar());
-})();
+;(function () {
+  document.addEventListener('DOMContentLoaded', () => getProgressBar())
+})()
 
-function getProgressBar() {
-  const listProgress = document.querySelectorAll(".progress-done");
-  
+/**
+ * It sets the width of the progress bar to the value of the data-done attribute, and then sets the
+ * opacity to 1
+ */
+const getProgressBar = () => {
   // Set Progress done
-  listProgress.length > 0 &&
-    listProgress.forEach((progress) => {
-      progress.style.width = progress.getAttribute("data-done") + "%";
-      progress.style.opacity = 1;
-    });
+  document.querySelectorAll('.progress-done').forEach((progress) => {
+    // @ts-ignore
+    progress.style.width = progress.getAttribute('data-done') + '%'
+    // @ts-ignore
+    progress.style.opacity = 1
+  })
 }

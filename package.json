@@ -1,15 +1,16 @@
 {
   "name": "portfolio-master",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "author": "Brando Vidal",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "yarn start",
+    "dev": "npm run start",
     "start": "servor src index.html 5500 --reload --browse --static"
   },
   "devDependencies": {
-    "servor": "^4.0.2"
+    "servor": "4.0.2"
   }
 }
