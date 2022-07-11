@@ -64,43 +64,36 @@ small {
 }
 
 /**** Buttons Styles ****/
-button {
+button,
+a {
   border: none;
   border-radius: var(--border-radius-lg);
   padding: 12px 35px;
   transition: all ease-in 300ms;
   background-color: var(--colorbg-white);
 }
-button:hover {
+button:is(:hover, :focus-within),
+a:is(:hover, :focus-within) {
   cursor: pointer;
 }
-button:focus {
+button:focus,
+a:focus {
   outline: none;
   filter: brightness(0.9);
 }
-button.btn-sm {
-  padding: 8px 22px;
-}
-button.btn-square {
-  padding: 11px;
-}
-
-button.btn-outline-secondary {
+.btn-outline-secondary {
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
 }
-button.btn-primary {
+.btn-primary {
   background: var(--color-primary);
   color: var(--bg-white);
 }
-button.btn-outline-primary {
+.btn-outline-primary {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
 }
 
-.hidden {
-  display: none;
-}
 .link {
   display: flex;
   font-size: 18px;
@@ -185,8 +178,16 @@ main > section:nth-child(7) {
   grid-column: 1/3;
   grid-row: 6/7;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 303px 351px 482px 115px 568px;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  column-gap: 30.5px;
+  /* width: max-content; */
+}
+main > section:nth-child(8) {
+  grid-column: 1/3;
+  grid-row: 7/8;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  grid-template-rows: 1fr;
   gap: 30.5px;
 }
 
@@ -206,6 +207,7 @@ main .resumen .header .col .link {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0;
 }
 main .resumen .header .col a:hover,
 main .resumen .header .col a:hover label {
@@ -327,7 +329,7 @@ main .experiences .item {
   display: grid;
   grid-template-columns: 0.35fr 1fr;
   gap: 22px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.75rem;
 }
 main .experiences .item:last-child {
   margin-bottom: 0;
@@ -351,7 +353,6 @@ main .experiences .list .info > .title {
   line-height: 19px;
 }
 main .experiences .list .info > .small {
-  margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 19px;
 }
@@ -375,14 +376,15 @@ main .projects .content button {
 /**** List of Projects *****/
 main .list-projects .card {
   padding: 18px;
+  position: relative;
 }
 main .list-projects .header picture {
-  height: 217px;
+  max-height: 217px;
   max-width: 292px;
 }
 main .list-projects .header img {
-  width: inherit;
-  height: inherit;
+  width: max-content;
+  height: max-content;
   background-size: cover;
 }
 main .list-projects .card .keywords {
@@ -403,10 +405,43 @@ main .list-projects .card .info .title {
 main .list-projects .card .info .text {
   font-size: 1rem;
   line-height: 19.5px;
-  margin-bottom: 1.125rem;
+  margin-bottom: 4.5rem;
 }
-main .list-projects .card .info button {
-  margin-right: 0.5rem;
+main .list-projects .card .end {
+  position: absolute;
+  bottom: 32px;
+  display: flex;
+}
+main .list-projects .card .end a {
+  margin-right: 0.75rem;
+  padding: 8px 22px;
+}
+
+/**** Pagination *****/
+main .pagination div ul.list {
+  display: flex;
+  flex-direction: row;
+}
+main .pagination div ul.list li.item {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5em;
+}
+main .pagination div ul.list li.item span {
+  width: max-content;
+  height: max-content;
+  padding: 4px;
+}
+main .pagination div ul.list li.item a {
+  width: 36px;
+  padding: 11px;
+  font-size: 0.75em;
+  line-height: 0.8em;
+  color: var(--color-secondary);
+  border-radius: 4px;
 }
 
 /**** Row - Col ****/
@@ -592,14 +627,25 @@ footer .username {
     grid-column: 1/2;
     grid-row: 7/8;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 1fr;
+    gap: 30.5px;
+  }
+  main > section:nth-child(8) {
+    grid-column: 1/2;
+    grid-row: 8/9;
+    display: grid;
     gap: 30.5px;
   }
   .row,
   .row-2 {
     grid-template-columns: repeat(1, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
+  }
+  .hidden {
+    display: none;
+  }
+  main .resumen .header .col .link {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 

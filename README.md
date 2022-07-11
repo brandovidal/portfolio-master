@@ -40,11 +40,11 @@
 
 _Screenshot Fullscreen_
 
-![Screenshot Fullscreen](./desktop.jpg)
+![Screenshot Fullscreen](./desktop.png)
 
 _Screenshot Mobile_
 
-![Screenshot Mobile](./mobile.jpg)
+![Screenshot Mobile](./mobile.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
@@ -74,7 +74,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 ### Clone this repository
 
 ```bash
-git clone https://github.com/brandovidal/edie-homepage
+git clone https://github.com/brandovidal/portfolio-master.git
 ```
 
 ### Install dependencies
