@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://portfolio-master-403.pages.dev/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/WrqIkD2v2qo6aCf6uPAM">
       Solution
     </a>
     <span> | </span>
@@ -47,6 +47,9 @@ _Screenshot Mobile_
 ![Screenshot Mobile](./mobile.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+
+- Where can I see your demo?
+  [Live demo](https://portfolio-master-403.pages.dev/)
 
 - Where can I see your demo?
 - What was your experience?
